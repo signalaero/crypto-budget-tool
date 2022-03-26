@@ -1,1 +1,2 @@
-# crypto-budget-tool
+# Cryptocurrency Budget Tool
+

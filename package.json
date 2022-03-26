@@ -1,0 +1,23 @@
+{
+    "name": "dev-api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "node server/index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/justinkprince/dev-api.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/justinkprince/dev-api/issues"
+    },
+    "homepage": "https://github.com/justinkprince/dev-api#readme",
+    "dependencies": {
+      "@justinkprince/dev-api": "^1.7.0"
+    }
+  }
