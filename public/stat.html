@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Crypto Budget Tool" />
+        <meta name="author" content="Nick Weiner" />
+
+        <title>Crypto Budget Tool </title>
+
+          <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/styles.css" rel="stylesheet" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cinzel+Decorative&display=swap" rel="stylesheet">
+
+          <!-- Bootstrap Table -->
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css">
+        
+    </head>
+
+    <body>
+
+          <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top main-font">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">Crypto Budget Toool</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="stat.html">Stats</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <!-- Page content-->
+        <div class="container" style="height: 30vh;">
+          </div>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <form>
+                <label for="selectRank" class="fantasy-font">Rank</label>
+                <select id="selectRank" type="text" name="selectRank" class="form-control main-font">
+            
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="selectClass" class="fantasy-font">Player Class</label>
+                <select id="selectClass" type="text" name="selectClass" class="form-control main-font">
+              
+                </select>
+            </div>
+            <div class="col-md-2">
+              <label for="statusEffects" class="fantasy-font">Status Effects</label>
+              <select id="statusEffects" type="text" name="statusEffects" class="form-control main-font">
+              </select>
+            </div>
+            <div class="col-md-3">
+            </div>
+              </form>
+          </div>
+            <div class="row fantasy-font">
+              <div class="col-md-3"></div>
+              <div class="col-md-2"></div>
+              <div class="col-md-2">
+
+              <div class="col-md-3"></div>
+
+            </div>
+
+            <div class="row mt-5">
+              <div class="col-md-3"></div>
+              <div class="col-md-2">Attack:</div>
+              <div class="col-md-2">Defense:</div>
+              <div class="col-md-3">
+                <div>
+                  <button class="btn-primary" id="startButton">Generate Stats</button></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-2" id="attack"></div>
+              <div class="col-md-2" id="defense"></div>
+              <div class="col-md-3"></div>
+            </div>
+            
+          </div>
+
+          <!-- Footer-->
+        <footer class="bg-light text-center footer text-lg-start mt-5">
+        
+            <!-- Copyright -->
+          <div class="text-center p-3 main-font" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2022 | Nick Weiner
+          </div>
+
+          <!-- Copyright -->
+        </footer>
+
+          <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+          <!-- Rank JS-->
+        <script src="assets/js/rank.js"></script>
+
+    </body>
+
+</html>
