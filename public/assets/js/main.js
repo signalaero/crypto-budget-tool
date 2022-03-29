@@ -2,7 +2,7 @@
 const budgetForm = document.getElementById("budgetForm");
 const userListContainer = document.getElementById("user-list-container");
 const userList = document.getElementById("user-list");
-const npcTemplate = document.getElementById("user-template");
+const userTemplate = document.getElementById("user-template");
 const logger = document.getElementById("log");
 
 // API helper class.
@@ -23,7 +23,7 @@ document.getElementById("clear-log-btn").addEventListener("click", () => {
 // Create a single table row populated with user data.
 const createUserTableRow = (user) => {
  
-  const tr = npcTemplate.content.cloneNode(true);
+  const tr = userTemplate.content.cloneNode(true);
   const td = tr.querySelectorAll("td");
 
   // Set the first cell to the user ID (truncated down to 4 characters).
@@ -129,7 +129,7 @@ budgetForm.addEventListener("submit", (event) => {
   // Send a POST request with the data to the API.
   api.post("/users", { firstLastName , percentBudgetCrypto, numPaychecks, favCrypto, favCryptoTwo, netPayPerPaycheck, rent, utilities, groceries, transportation, insurance, healthcare, savingInvestingDebt, personalSpending, misc, email }).then((response) => {
     log(`Create new user: ${response.firstLastName}`);
-    // Update the list of NPCs now that it has changed.
+    // Update the list of users now that it has changed.
     updateUserList();
   });
   // Clear out the input field of its previous value.
