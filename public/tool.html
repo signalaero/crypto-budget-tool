@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Crypto Budget Tool</title>
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Cinzel+Decorative&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css">
+
+    <script src="./assets/js/api.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+
+    <!-- JQuery (CDN) JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+      <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand main-font" href="index.html">Crypto Budget Tool</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse main-font" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tool.html">Tool</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="text-center mt-5 main-font">
+            <h1>Budget Tool</h1>
+            <hr>
+            <br>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>  
+          <form id="budgetForm">
+            <fieldset>
+              <div class="row mx-3 d-flex justify-content-center">
+                <div class="col-md-3">
+                  <label for="firstName" class="fantasy-font">First Name</label>
+                  <input id="firstName" type="text" name="firstName" placeholder="Ex: Nick" class="form-control main-font" />
+                </div>
+                <div class="col-md-3">
+                  <label for="lastName" class="fantasy-font">Last Name</label>
+                  <input id="lastName" type="text" name="lastName" placeholder="Ex: Weiner" class="form-control main-font" />
+                </div>
+                <div class="col-md-3">
+                  <label for="age" class="fantasy-font">Age</label>
+                  <input id="age" type="text" name="age" placeholder="Ex: 29" class="form-control main-font" />
+                </div>
+              </div>
+              <div class="row mx-3 mt-3 d-flex justify-content-center">
+                <div class="col-md-3">
+                  <div id = "favCryptoVisual" class="col-md-2 mb-2" style="height: 40px; width: 120px; margin: auto; border: 2px solid black;"></div>
+                  <label for="favCrypto" class="fantasy-font">Favorite Cryptocurrency #1</label>
+                  <select id="favCrypto" type="text" onchange="changeFavCrypto(this)" name="favCrypto" class="form-control main-font">
+                    <option selected>Choose...</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <div class="col-md-2 mb-2" style="height: 40px; width: 120px; margin: auto; border: 2px solid black;"></div>
+                  <label for="favCryptoTwo" class="fantasy-font">Favorite Cryptocurrency #2</label>
+                  <select id="favCryptoTwo" type="text" onchange="changeFavCryptoTwo(this)" name="favCryptoTwo" class="form-control main-font">
+                    <option selected>Choose...</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
+                  <label for="biWeeklyNetPay" class="fantasy-font">Bi-Weekly Net Pay</label>
+                  <input id="biWeeklyNetPay" type="text" name="biWeeklyNetPay" placeholder="Amount Here" class="form-control main-font" />
+                </div>
+              </div>
+              <div class="row mx-3 mt-3 d-flex justify-content-center">
+                <div class="col-md-3">
+                  <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
+                  <label for="rent" class="fantasy-font">Rent</label>
+                  <input id="rent" type="text" name="rent" placeholder="Amount Here" class="form-control main-font" />
+                  
+                </div>
+                <div class="col-md-3">
+                  <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
+                  <label for="utilities" class="fantasy-font">Utilities</label>
+                  <input id="utilities" type="text" name="utilities" placeholder="Amount Here" class="form-control main-font" />
+                </div>
+                <div class="col-md-3">
+                  <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
+                  <label for="groceries" class="fantasy-font">Groceries</label>
+                  <input id="groceries" type="text" name="groceries" placeholder="Amount Here" class="form-control main-font" />
+                </div>
+              </div>
+              <div class="row mx-3 mt-3 d-flex justify-content-center">
+                <div class="col-md-3">
+                  <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
+                  <label for="transportation" class="fantasy-font">Transportation</label>
+                  <input id="transportation" type="text" name="transportation" placeholder="Amount Here" class="form-control main-font" />
+                </div>
+                <div class="col-md-3">
+                  <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
+                  <label for="insurance" class="fantasy-font">Insurance</label>
+                  <input id="insurance" type="text" name="insurance" placeholder="Amount Here" class="form-control main-font" />
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
+                    <label for="healthcare" class="fantasy-font">Health Care</label>
+                    <input id="healthcare" type="text" name="healthcare" placeholder="Amount Here" class="form-control main-font" />
+                </div>
+              </div>
+              <div class="row mx-3 mt-3 d-flex justify-content-center">
+                <div class="col-md-3">
+                  <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
+                  <label for="savingInvestingDebt" class="fantasy-font">Saving/Investing/Debt</label>
+                  <input id="savingInvestingDebt" type="text" name="savingInvestingDebt" placeholder="Amount Here" class="form-control main-font" />
+                </div>
+                <div class="col-md-3">
+                  <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
+                  <label for="personalSpending" class="fantasy-font">Personal Spending</label>
+                  <input id="personalSpending" type="text" name="personalSpending" placeholder="Amount Here" class="form-control main-font" />
+                </div>
+                <div class="col-md-3">
+                    <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
+                    <label for="misc" class="fantasy-font">Misc</label>
+                    <input id="misc" type="text" name="misc" placeholder="Amount Here" class="form-control main-font" />
+                </div>
+              </div>
+              <div class="row mx-3 mt-3 d-flex justify-content-center">
+                <div class="col-md-9">
+                  <div class="col-md-2 mb-2 mt-4"></div>
+
+                  <label for="email" class="fantasy-font">E-Mail: (required)</label>
+                  <input id="email" type="text" name="email" placeholder="johndoe@mail.com" class="form-control main-font" required />
+                </div>
+                </div>
+              </div>
+              <div class="row mx-3 mt-3 d-flex justify-content-center">
+                <div class="col-md-1 mb-3">
+                  <button id="submitNpcForm" class="btn btn-outline-primary main-font">Submit</button>
+                </div>
+                <p class="main-font" style="font-size: small; text-align: center;">Note: Form will not submit if an inputted e-mail is invalid.</p>
+              </div>
+            </fieldset>
+          </form>
+          <div class="row">
+            <div id="log" class="log col-sm-2 main-font" style="margin: auto; height: 8vh;">
+
+            </div>
+          </div>
+          <div class="row">
+            <button id="clear-log-btn" class="col-sm-2 mt-3 btn btn-outline-danger main-font" style="margin: auto;">Clear</button>
+          </div>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div id="user-list-container" class="user-list-container mt-4 col-md-6" style="text-align: center;">
+              <h4 class="msg-no-users main-font">No Data Currently Displayed</h4>
+            </div>
+            <div class="col-md-3"></div>
+          </div>
+          
+          <table class="user-list-table table table-striped table-bordered table-hover table-sm" style="font-size:x-small;"> 
+            <thead>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Age</th>
+              <th>Favorite Cryptocurrency #1</th>
+              <th>Favorite Cryptocurrency #2</th>
+              <th>Bi-Weekly Net Pay</th>
+              <th>Rent Cost</th>
+              <th>Utilites Cost</th>
+              <th>Groceries Cost</th>
+              <th>Transportations Cost</th>
+              <th>Insurance Cost</th>
+              <th>Healthcare Cost</th>
+              <th>Saving/Investing/Debt</th>
+              <th>Personal Spending Cost</th>
+              <th>Misc Expenses</th>
+              <th>E-mail</th>
+            </thead>
+            <tbody id="user-list"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <template id="user-template">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <button class="delete-btn">Delete</button>
+        </td>
+        <td></td>
+      </tr>
+    </template>
+
+    <!-- Footer-->
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <!-- Copyright -->
+      <div class="text-center p-3 main-font" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 | Nick Weiner
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="assets/js/scripts.js"></script>
+    <!-- email validate JS-->
+    <script src="./assets/js/emailvalidate.js"></script>
+  </body>
+
+</html>

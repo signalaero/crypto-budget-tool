@@ -1,5 +1,5 @@
 // DOM elements
-const npcForm = document.getElementById("npcForm");
+const budgetForm = document.getElementById("budgetForm");
 const npcListContainer = document.getElementById("user-list-container");
 const npcList = document.getElementById("user-list");
 const npcTemplate = document.getElementById("user-template");
@@ -34,18 +34,18 @@ const createUserTableRow = (user) => {
   td[1].textContent = user.firstName;
   td[2].textContent = user.lastName;
   td[3].textContent = user.age;
-  td[4].textContent = user.hairColor;
-  td[5].textContent = user.eyeColor;
-  td[6].textContent = user.complexion;
-  td[7].textContent = user.favColorOne;
-  td[8].textContent = user.favColorTwo;
-  td[9].textContent = user.hairStyle;
-  td[10].textContent = user.npcHeight;
-  td[11].textContent = user.npcWeight;
-  td[12].textContent = user.npcClass;
-  td[13].textContent = user.primaryAttack;
-  td[14].textContent = user.secondaryAttack;
-  td[15].textContent = user.specialAbility;
+  td[4].textContent = user.favCrypto;
+  td[5].textContent = user.favCryptoTwo;
+  td[6].textContent = user.biWeeklyNetPay;
+  td[7].textContent = user.rent;
+  td[8].textContent = user.utilities;
+  td[9].textContent = user.groceries;
+  td[10].textContent = user.transportation;
+  td[11].textContent = user.insurance;
+  td[12].textContent = user.healthcare;
+  td[13].textContent = user.savingInvestingDebt;
+  td[14].textContent = user.personalSpending;
+  td[15].textContent = user.misc;
   td[16].textContent = user.email;
 
   // Add the user ID as the delete button's ID for convenience later on.
@@ -103,7 +103,7 @@ npcList.addEventListener("click", (event) => {
 });
 
 // Listener for creating new users.
-npcForm.addEventListener("submit", (event) => {
+budgetForm.addEventListener("submit", (event) => {
   // Prevent reload on submit
   event.preventDefault();
 
@@ -111,29 +111,29 @@ npcForm.addEventListener("submit", (event) => {
   const firstName = event.target.elements["firstName"].value;
   const lastName = event.target.elements["lastName"].value;
   const age = event.target.elements["age"].value;
-  const hairColor = event.target.elements["hairColor"].value;
-  const eyeColor = event.target.elements["eyeColor"].value;
-  const complexion = event.target.elements["complexion"].value;
-  const favColorOne = event.target.elements["favColorOne"].value;
-  const favColorTwo = event.target.elements["favColorTwo"].value;
-  const hairStyle = event.target.elements["hairStyle"].value;
-  const npcHeight = event.target.elements["npcHeight"].value;
-  const npcWeight = event.target.elements["npcWeight"].value;
-  const npcClass = event.target.elements["npcClass"].value;
-  const primaryAttack = event.target.elements["primaryAttack"].value;
-  const secondaryAttack = event.target.elements["secondaryAttack"].value;
-  const specialAbility = event.target.elements["specialAbility"].value;
+  const favCrypto = event.target.elements["favCrypto"].value;
+  const favCryptoTwo = event.target.elements["favCryptoTwo"].value;
+  const biWeeklyNetPay = event.target.elements["biWeeklyNetPay"].value;
+  const rent = event.target.elements["rent"].value;
+  const utilities = event.target.elements["utilities"].value;
+  const groceries = event.target.elements["groceries"].value;
+  const transportation = event.target.elements["transportation"].value;
+  const insurance = event.target.elements["insurance"].value;
+  const healthcare = event.target.elements["healthcare"].value;
+  const savingInvestingDebt = event.target.elements["savingInvestingDebt"].value;
+  const personalSpending = event.target.elements["personalSpending"].value;
+  const misc = event.target.elements["misc"].value;
   const email = event.target.elements["email"].value;
 
 
   // Send a POST request with the data to the API.
-  api.post("/users", { firstName , lastName, age, hairColor, eyeColor, complexion, favColorOne, favColorTwo, hairStyle, npcHeight, npcWeight, npcClass, primaryAttack, secondaryAttack, specialAbility, email }).then((response) => {
+  api.post("/users", { firstName , lastName, age, favCrypto, favCryptoTwo, biWeeklyNetPay, rent, utilities, groceries, transportation, insurance, healthcare, savingInvestingDebt, personalSpending, misc, email }).then((response) => {
     log(`Create new user: ${response.firstName}`);
     // Update the list of NPCs now that it has changed.
     updateNpcList();
   });
   // Clear out the input field of its previous value.
-  npcForm.reset();
+  budgetForm.reset();
 });
 
 // Populate the user list on page load.
