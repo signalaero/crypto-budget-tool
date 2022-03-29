@@ -1,7 +1,7 @@
 // DOM elements
 const budgetForm = document.getElementById("budgetForm");
-const npcListContainer = document.getElementById("user-list-container");
-const npcList = document.getElementById("user-list");
+const userListContainer = document.getElementById("user-list-container");
+const userList = document.getElementById("user-list");
 const npcTemplate = document.getElementById("user-template");
 const logger = document.getElementById("log");
 
@@ -71,7 +71,7 @@ const createUserTableRows = (users) => {
 };
 
 // Fetch user data from API and update the user list in the DOM.
-const updateNpcList = () => {
+const updateUserList = () => {
   api.get("/users").then((response) => {
     const users = response.data;
     const hasUsers = users.length > 0;
@@ -81,24 +81,24 @@ const updateNpcList = () => {
       // Get a DocumentFragment containing table rows of user data.
       const tr = createUserTableRows(users);
       // Replace all the children of the tbody element with our new user rows.
-      npcList.replaceChildren(tr);
+      userList.replaceChildren(tr);
     }
 
     log(`Fetched ${users.length} users.`);
     // Set the class that determines if the "no users" message is displayed or not.
-    npcListContainer.classList.toggle("has-users", hasUsers);
+    userListContainer.classList.toggle("has-users", hasUsers);
   });
 };
 
 // Click listener for deleting users.
 
-npcList.addEventListener("click", (event) => {
+userList.addEventListener("click", (event) => {
   const target = event.target;
   if (target.className === "delete-btn") {
     const resource = `/users/${target.id}`;
     api.delete(resource).then((response) => console.log(response));
     log(`Delete user with ID: ${target.id}`);
-    updateNpcList();
+    updateUserList();
   }
 });
 
@@ -130,11 +130,11 @@ budgetForm.addEventListener("submit", (event) => {
   api.post("/users", { firstName , lastName, age, favCrypto, favCryptoTwo, biWeeklyNetPay, rent, utilities, groceries, transportation, insurance, healthcare, savingInvestingDebt, personalSpending, misc, email }).then((response) => {
     log(`Create new user: ${response.firstName}`);
     // Update the list of NPCs now that it has changed.
-    updateNpcList();
+    updateUserList();
   });
   // Clear out the input field of its previous value.
   budgetForm.reset();
 });
 
 // Populate the user list on page load.
-updateNpcList();
+updateUserList();
