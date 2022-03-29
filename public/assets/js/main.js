@@ -31,12 +31,12 @@ const createUserTableRow = (user) => {
   // Show the full user ID on mouse hover.
   td[0].title = user.id;
   
-  td[1].textContent = user.firstName;
-  td[2].textContent = user.lastName;
-  td[3].textContent = user.age;
+  td[1].textContent = user.firstLastName;
+  td[2].textContent = user.percentBudgetCrypto;
+  td[3].textContent = user.numPaychecks;
   td[4].textContent = user.favCrypto;
   td[5].textContent = user.favCryptoTwo;
-  td[6].textContent = user.biWeeklyNetPay;
+  td[6].textContent = user.netPayPerPaycheck;
   td[7].textContent = user.rent;
   td[8].textContent = user.utilities;
   td[9].textContent = user.groceries;
@@ -108,12 +108,12 @@ budgetForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   // Get the value of the fields.
-  const firstName = event.target.elements["firstName"].value;
-  const lastName = event.target.elements["lastName"].value;
-  const age = event.target.elements["age"].value;
+  const firstLastName = event.target.elements["firstLastName"].value;
+  const percentBudgetCrypto = event.target.elements["percentBudgetCrypto"].value;
+  const numPaychecks = event.target.elements["numPaychecks"].value;
   const favCrypto = event.target.elements["favCrypto"].value;
   const favCryptoTwo = event.target.elements["favCryptoTwo"].value;
-  const biWeeklyNetPay = event.target.elements["biWeeklyNetPay"].value;
+  const netPayPerPaycheck = event.target.elements["netPayPerPaycheck"].value;
   const rent = event.target.elements["rent"].value;
   const utilities = event.target.elements["utilities"].value;
   const groceries = event.target.elements["groceries"].value;
@@ -127,8 +127,8 @@ budgetForm.addEventListener("submit", (event) => {
 
 
   // Send a POST request with the data to the API.
-  api.post("/users", { firstName , lastName, age, favCrypto, favCryptoTwo, biWeeklyNetPay, rent, utilities, groceries, transportation, insurance, healthcare, savingInvestingDebt, personalSpending, misc, email }).then((response) => {
-    log(`Create new user: ${response.firstName}`);
+  api.post("/users", { firstLastName , percentBudgetCrypto, numPaychecks, favCrypto, favCryptoTwo, netPayPerPaycheck, rent, utilities, groceries, transportation, insurance, healthcare, savingInvestingDebt, personalSpending, misc, email }).then((response) => {
+    log(`Create new user: ${response.firstLastName}`);
     // Update the list of NPCs now that it has changed.
     updateUserList();
   });

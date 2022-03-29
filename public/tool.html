@@ -65,16 +65,16 @@
             <fieldset>
               <div class="row mx-3 d-flex justify-content-center">
                 <div class="col-md-3">
-                  <label for="firstName" class="fantasy-font">First Name</label>
-                  <input id="firstName" type="text" name="firstName" placeholder="Ex: Nick" class="form-control main-font" />
+                  <label for="firstLastName" class="fantasy-font">Name</label>
+                  <input id="firstLastName" type="text" name="firstLastName" placeholder="Ex: Nick Weiner" class="form-control main-font" />
                 </div>
                 <div class="col-md-3">
-                  <label for="lastName" class="fantasy-font">Last Name</label>
-                  <input id="lastName" type="text" name="lastName" placeholder="Ex: Weiner" class="form-control main-font" />
+                  <label for="percentBudgetCrypto" class="fantasy-font">% Allocated to Crypto</label>
+                  <input id="percentBudgetCrypto" type="number" min="1" max="100" name="percentBudgetCrypto" placeholder="Enter Percent" class="form-control main-font" />
                 </div>
                 <div class="col-md-3">
-                  <label for="age" class="fantasy-font">Age</label>
-                  <input id="age" type="number" name="age" placeholder="Ex: 29" class="form-control main-font" />
+                  <label for="numPaychecks" class="fantasy-font"># of Paychecks (per month)</label>
+                  <input id="numPaychecks" type="number" name="numPaychecks" placeholder="Ex: 2" class="form-control main-font" />
                 </div>
               </div>
               <div class="row mx-3 mt-3 d-flex justify-content-center">
@@ -94,15 +94,15 @@
                 </div>
                 <div class="col-md-3">
                   <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
-                  <label for="biWeeklyNetPay" class="fantasy-font">Bi-Weekly Net Pay</label>
-                  <input id="biWeeklyNetPay" type="number" name="biWeeklyNetPay" placeholder="Amount Here" class="form-control main-font" />
+                  <label for="netPayPerPaycheck" class="fantasy-font">Net Pay Per Paycheck</label>
+                  <input id="netPayPerPaycheck" type="number" name="netPayPerPaycheck" placeholder="Amount Here" class="form-control main-font" />
                 </div>
               </div>
               <div class="row mx-3 mt-3 d-flex justify-content-center">
                 <div class="col-md-3">
                   <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
                   <label for="rent" class="fantasy-font">Rent</label>
-                  <input id="rent" type="text" name="number" placeholder="Amount Here" class="form-control main-font" />
+                  <input id="rent" type="number" name="rent" placeholder="Amount Here" class="form-control main-font" />
                   
                 </div>
                 <div class="col-md-3">
@@ -146,7 +146,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="col-md-2 mb-2" style="height: 40px; width: 40px; margin: auto;"></div>
-                    <label for="misc" class="fantasy-font">Misc</label>
+                    <label for="misc" class="fantasy-font">Tithe (or Misc.)</label>
                     <input id="misc" type="number" name="misc" placeholder="Amount Here" class="form-control main-font" />
                 </div>
               </div>
@@ -186,12 +186,12 @@
           <table class="user-list-table table table-striped table-bordered table-hover table-sm" style="font-size:x-small;"> 
             <thead>
               <th>ID</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Age</th>
+              <th>Name</th>
+              <th>Percentage Allocated to Crypto</th>
+              <th>Number of Paychecks Per Month</th>
               <th>Favorite Cryptocurrency #1</th>
               <th>Favorite Cryptocurrency #2</th>
-              <th>Bi-Weekly Net Pay</th>
+              <th>Net Pay Per Paycheck</th>
               <th>Rent Cost</th>
               <th>Utilites Cost</th>
               <th>Groceries Cost</th>
@@ -200,7 +200,7 @@
               <th>Healthcare Cost</th>
               <th>Saving/Investing/Debt</th>
               <th>Personal Spending Cost</th>
-              <th>Misc Expenses</th>
+              <th>Tithe (or Misc.) Expenses</th>
               <th>E-mail</th>
             </thead>
             <tbody id="user-list"></tbody>

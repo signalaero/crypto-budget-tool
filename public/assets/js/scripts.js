@@ -1,6 +1,5 @@
-
-// NPC Color Options
-let colorOptions = [
+// CryptoCurrency Options
+let cryptoOptions = [
    "AliceBlue",
    "AntiqueWhite",
    "Aqua",
@@ -156,15 +155,15 @@ let colorOptions = [
 
 // Favorite Color One
    
-    const favColorOne = document.getElementById("favCrypto");
-    let favColorOneOptions = colorOptions;
+    const favCrypto = document.getElementById("favCrypto");
+    let favCryptoOptions = cryptoOptions;
  
-    for(let i = 0; i < favColorOneOptions.length; i++) {
-    let opt = favColorOneOptions[i];
+    for(let i = 0; i < favCryptoOptions.length; i++) {
+    let opt = favCryptoOptions[i];
     const el = document.createElement("option");
     el.textContent = opt;
     el.value = opt;
-    favColorOne.appendChild(el);
+    favCrypto.appendChild(el);
  }
 
  function changeFavCrypto(el) {
