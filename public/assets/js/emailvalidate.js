@@ -13,11 +13,11 @@ function validateEmail(id) {
 //JQuery
 $(document).ready(
     function() {
-        $("#submitNpcForm").click(function() {
+        $("#submitUserForm").click(function() {
             if(!validateEmail("email")) {
             return false;
             }
-        $("#npcForm").submit();     
+        $("#userForm").submit();     
         }
         );
     }
