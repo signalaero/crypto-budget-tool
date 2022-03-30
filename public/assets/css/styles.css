@@ -57,10 +57,28 @@ figcaption {
     text-align: center;
 }
 
+.favCryptoVisual {
+    height: 40px; 
+    width: 120px; 
+    margin: auto; 
+    border: 2px solid black;
+}
+
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
-  }
+}
+
+.section2 {
+    width: 100%;
+    height: 20vh;
+    background-color: beige;
+    font-size: xx-small;
+
+}
+.coin {
+
+}
