@@ -141,11 +141,11 @@ budgetForm.addEventListener("submit", (event) => {
   const netPayPerMonthDisplay = document.getElementById("netPayPerMonthDisplay");
   netPayPerMonthDisplay.textContent = "Net Pay Per Month = $" + (netPayPerMonth);
   const budgetCryptoAmountDisplay = document.getElementById("dollarAmountForCryptoDisplay");
-  budgetCryptoAmountDisplay.textContent = "Selected Dollar Amount for Crypto = $" + (budgetCryptoAmount)
+  budgetCryptoAmountDisplay.textContent = "Budgeted Amount Crypto = $" + (budgetCryptoAmount)
   const expendituresDisplay = document.getElementById("expendituresDisplay");
   expendituresDisplay.textContent = "Total Expenditures = $" + (expenditures);
   const totalCostDisplay = document.getElementById("totalCostDisplay");
-  totalCostDisplay.textContent = "Total Cost = $" + (totalCost)
+  totalCostDisplay.textContent = "Total Cost of Crypto & Expenditures = $" + (totalCost)
 
 
   // Send a POST request with the data to the API.

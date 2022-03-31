@@ -32,7 +32,7 @@ function displayCoins(coins) {
     const tickerTwo = document.getElementById("favCryptoTwo");
 
     for (i = 0; i < coinName.length; i++) {
-        console.log((i+1) + ": " + coinName[i]);
+       // console.log((i+1) + ": " + coinName[i]);
         let opt = coinName[i];
         const el = document.createElement("option");
         el.textContent = opt;
@@ -50,22 +50,21 @@ function displayCoins(coins) {
     }
 
     for (i = 0; i < amount.length; i++) {
-        console.log((i+1) + ": " + amount[i]);
+       // console.log((i+1) + ": " + amount[i]);
+
     }
 
 }
 
-    console.log("Helium (HNT) gm");
+      // Calculations
+      var selectedAmount = amount.options[amount.selectedIndex].index;
 
-  // Caclulations
-  var selectedTicker = ticker.options[ticker.selectedIndex].index;
-  console.log(typeof selectedTicker)
-  var selectedAmount = amount.options[amount.selectedIndex].index;
+      // Change 
+      function changeFavCrypto(selectedAmount) { 
+      document.getElementById("costOfFavCryptoDisplay").textContent = "Cost of Favorite Crypto = $" + (selectedAmount);
+    }
 
-  // Change 
- function changeFavCrypto(selectedTicker) { 
-    document.getElementById("costOfFavCryptoDisplay").textContent = "Cost of Favorite Crypto = $" + (selectedTicker);
-  }
+
 
 
 
