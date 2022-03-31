@@ -1,15 +1,3 @@
-// Favorite Color One
-const favCrypto = document.getElementById("favCrypto");
-let favCryptoOptions = cryptoOptions;
-
-for(let i = 0; i < favCryptoOptions.length; i++) {
-let opt = favCryptoOptions[i];
-const el = document.createElement("option");
-el.textContent = opt;
-el.value = opt;
-favCrypto.appendChild(el);
-}
-
 getCoins();
 
 function getCoins() {
@@ -36,30 +24,36 @@ function displayCoins(coins) {
 
     coins.forEach(coin => {
 
-        let sym = document.createElement('p');
-        sym.classList.add('coin-name');
-        let price = document.createElement('p');
-        price.classList.add('coin-price');
-
-        sym.innerHTML = coin.symbol;
-        price.innerHTML = '$' + coin.current_price;
-
-        list.appendChild(sym);
-        list.appendChild(price);
-
-
-        // Use this data to create an array with symbols and current_price
-        //console.log(coin.symbol)
-        //console.log(coin.current_price)
-
         symbol.push(coin.symbol)
         amount.push(coin.current_price)
 
     })
 
-    for (i = 0; i < symbol.length; i++)
-    console.log((i+1) + ": " + symbol[i]);
+    const ticker = document.getElementById("favCrypto");
+    const tickerTwo = document.getElementById("favCryptoTwo");
 
-    for (i = 0; i < amount.length; i++)
-    console.log((i+1) + ": " + amount[i]);
+    for (i = 0; i < symbol.length; i++) {
+        console.log((i+1) + ": " + symbol[i]);
+        let opt = symbol[i];
+        const el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        ticker.appendChild(el);
+    }
+
+    for (i = 0; i < symbol.length; i++) {
+        console.log((i+1) + ": " + symbol[i]);
+        let opt = symbol[i];
+        const el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        tickerTwo.appendChild(el);
+    }
+
+
+
+    for (i = 0; i < amount.length; i++) {
+        console.log((i+1) + ": " + amount[i]);
+    }
+
 }
