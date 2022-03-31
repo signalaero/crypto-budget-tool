@@ -25,15 +25,17 @@ function getCoins() {
 
             displayCoins(coins);
 
-
         })
 }
 
 function displayCoins(coins) {
     const list = document.querySelector('.section2');
+    const symbol = [];
+    const amount = [];
 
 
     coins.forEach(coin => {
+
         let sym = document.createElement('p');
         sym.classList.add('coin-name');
         let price = document.createElement('p');
@@ -44,11 +46,20 @@ function displayCoins(coins) {
 
         list.appendChild(sym);
         list.appendChild(price);
-        
+
 
         // Use this data to create an array with symbols and current_price
-        console.log(coin.symbol)
-        console.log(coin.current_price)
+        //console.log(coin.symbol)
+        //console.log(coin.current_price)
+
+        symbol.push(coin.symbol)
+        amount.push(coin.current_price)
+
     })
 
+    for (i = 0; i < symbol.length; i++)
+    console.log((i+1) + ": " + symbol[i]);
+
+    for (i = 0; i < amount.length; i++)
+    console.log((i+1) + ": " + amount[i]);
 }
