@@ -50,8 +50,6 @@ function displayCoins(coins) {
         tickerTwo.appendChild(el);
     }
 
-
-
     for (i = 0; i < amount.length; i++) {
         console.log((i+1) + ": " + amount[i]);
     }

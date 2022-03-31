@@ -75,10 +75,9 @@ figcaption {
 .section2 {
     width: 100%;
     height: 20vh;
+    margin-bottom: 3em;
     background-color: beige;
-    font-size: xx-small;
-
-}
-.coin {
+    font-size: x-small;
+    margin: 10px;
 
 }
