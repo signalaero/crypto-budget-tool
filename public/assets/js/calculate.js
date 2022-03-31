@@ -17,7 +17,6 @@ function getCoins() {
 }
 
 function displayCoins(coins) {
-    const list = document.querySelector('.section2');
     const symbol = [];
     const amount = [];
 
@@ -42,7 +41,7 @@ function displayCoins(coins) {
     }
 
     for (i = 0; i < symbol.length; i++) {
-        console.log((i+1) + ": " + symbol[i]);
+        // console.log((i+1) + ": " + symbol[i]);
         let opt = symbol[i];
         const el = document.createElement("option");
         el.textContent = opt;
@@ -55,3 +54,22 @@ function displayCoins(coins) {
     }
 
 }
+
+  // Caclulations
+  var selectedTicker = ticker.options[ticker.selectedIndex].index;
+  console.log(typeof selectedTicker)
+  var selectedAmount = amount.options[amount.selectedIndex].index;
+
+  // Change 
+ function changeFavCrypto(selectedTicker) { 
+    document.getElementById("costOfFavCryptoDisplay").textContent = "Cost of Favorite Crypto = $" + (selectedTicker);
+  }
+
+
+
+  // Local Storage of Calculations Based on Most Recent Submit
+  const netPayPerMonthDisplay = document.getElementById("netPayPerMonthDisplay");
+  netPayPerMonthDisplay.textContent = "Net Pay Per Month = $" + (netPayPerMonth);
+
+
+

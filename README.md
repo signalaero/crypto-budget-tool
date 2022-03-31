@@ -39,14 +39,9 @@ DEV API Location: `public/assets/js/api.js` , `server/index.js` & `public/assets
 
 Location: ` public/assets/js/emailvalidate.js ` , `public/tool.html `
 
-6. Create and use a function that accepts two or more values (parameters), calculates or determines a new value based on those inputs, and returns a new value
+6. Build a conversion tool that converts user input to another type and displays it (ex: converts cups to grams)
 
-Location: 
-
-7. Build a conversion tool that converts user input to another type and displays it (ex: converts cups to grams)
-
-Location:
-
+Location: ` public/assets/js/main.js `
 
 
 ## Additional Features:

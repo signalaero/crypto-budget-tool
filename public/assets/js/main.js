@@ -125,6 +125,27 @@ budgetForm.addEventListener("submit", (event) => {
   const misc = event.target.elements["misc"].value;
   const email = event.target.elements["email"].value;
 
+  // Net Pay Per Month Calculation
+  const netPayPerMonth = numPaychecks * netPayPerPaycheck;
+  
+  // Budgeted Amount for Crypto
+  const budgetCryptoAmount = netPayPerMonth * percentBudgetCrypto * .01;
+
+  // Total Expenditures
+  const expenditures = +rent + +groceries + +transportation + +insurance + +healthcare + +savingInvestingDebt + +personalSpending + +misc;
+
+  // Total Costs
+  const totalCost = +expenditures + +budgetCryptoAmount;
+
+  // Display of Calculations - Local Storage
+  const netPayPerMonthDisplay = document.getElementById("netPayPerMonthDisplay");
+  netPayPerMonthDisplay.textContent = "Net Pay Per Month = $" + (netPayPerMonth);
+  const budgetCryptoAmountDisplay = document.getElementById("dollarAmountForCryptoDisplay");
+  budgetCryptoAmountDisplay.textContent = "Selected Dollar Amount for Crypto = $" + (budgetCryptoAmount)
+  const expendituresDisplay = document.getElementById("expendituresDisplay");
+  expendituresDisplay.textContent = "Total Expenditures = $" + (expenditures);
+  const totalCostDisplay = document.getElementById("totalCostDisplay");
+  totalCostDisplay.textContent = "Total Cost = $" + (totalCost)
 
   // Send a POST request with the data to the API.
   api.post("/users", { firstLastName , percentBudgetCrypto, numPaychecks, favCrypto, favCryptoTwo, netPayPerPaycheck, rent, utilities, groceries, transportation, insurance, healthcare, savingInvestingDebt, personalSpending, misc, email }).then((response) => {
