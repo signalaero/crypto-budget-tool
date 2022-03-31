@@ -32,7 +32,7 @@ function displayCoins(coins) {
     const tickerTwo = document.getElementById("favCryptoTwo");
 
     for (i = 0; i < coinName.length; i++) {
-        console.log((i+1) + ": " + symbol[i]);
+        console.log((i+1) + ": " + coinName[i]);
         let opt = coinName[i];
         const el = document.createElement("option");
         el.textContent = opt;
@@ -41,7 +41,7 @@ function displayCoins(coins) {
     }
 
     for (i = 0; i < coinName.length; i++) {
-        // console.log((i+1) + ": " + symbol[i]);
+        // console.log((i+1) + ": " + coinName[i]);
         let opt = coinName[i];
         const el = document.createElement("option");
         el.textContent = opt;
