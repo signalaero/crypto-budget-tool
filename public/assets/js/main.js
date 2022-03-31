@@ -146,10 +146,7 @@ budgetForm.addEventListener("submit", (event) => {
   expendituresDisplay.textContent = "Total Expenditures = $" + (expenditures);
   const totalCostDisplay = document.getElementById("totalCostDisplay");
   totalCostDisplay.textContent = "Total Cost = $" + (totalCost)
-  
-  if (totalCostDisplay >= 0) {
 
-  }
 
   // Send a POST request with the data to the API.
   api.post("/users", { firstLastName , percentBudgetCrypto, numPaychecks, favCrypto, favCryptoTwo, netPayPerPaycheck, rent, utilities, groceries, transportation, insurance, healthcare, savingInvestingDebt, personalSpending, misc, email }).then((response) => {
