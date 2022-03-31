@@ -48,7 +48,12 @@ Location: ` public/assets/js/main.js `
 
 - Bootstrap 5 Responsive Layout
 
+## Suggestions / Feedback
+
+As a programming student, I'm looking for suggestions on how to go about refactoring my code and/or advice about how to continue improvement with JavaScript. If you check out this project and have some advice, please don't hesistate to shoot me an e-mail at ` nicholas.weiner@icloud.com ` to help me improve!
+
 
 ## Credit
 - Form made with server-side help from Justin Prince's Dev API (https://github.com/justinkprince/dev-api).
 - Adapted form and expanded functionality from 1st Code Louisville JavaScript Project (https://github.com/signalaero/javascript-fantasy-tools)
+- Code Louisville Mentors for weekly help, advice, and tips!

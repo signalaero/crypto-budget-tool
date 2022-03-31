@@ -125,7 +125,7 @@ budgetForm.addEventListener("submit", (event) => {
   const misc = event.target.elements["misc"].value;
   const email = event.target.elements["email"].value;
 
-  // Net Pay Per Month Calculation
+  // Net Pay Per Month
   const netPayPerMonth = numPaychecks * netPayPerPaycheck;
   
   // Budgeted Amount for Crypto
