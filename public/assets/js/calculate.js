@@ -55,6 +55,8 @@ function displayCoins(coins) {
 
 }
 
+    console.log("Helium (HNT) gm");
+
   // Caclulations
   var selectedTicker = ticker.options[ticker.selectedIndex].index;
   console.log(typeof selectedTicker)
