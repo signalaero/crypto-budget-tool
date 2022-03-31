@@ -50,6 +50,5 @@ Location: ` public/assets/js/main.js `
 
 
 ## Credit
-Form made with server-side help from Justin Prince's Dev API (https://github.com/justinkprince/dev-api). 
-
-
+Form made with server-side help from Justin Prince's Dev API (https://github.com/justinkprince/dev-api).
+Adapted form and expanded functionality from 1st Code Louisville JavaScript Project (https://github.com/signalaero/javascript-fantasy-tools)
