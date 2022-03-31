@@ -17,13 +17,13 @@ function getCoins() {
 }
 
 function displayCoins(coins) {
-    const symbol = [];
+    const coinName = [];
     const amount = [];
 
 
     coins.forEach(coin => {
 
-        symbol.push(coin.symbol)
+        coinName.push(coin.name)
         amount.push(coin.current_price)
 
     })
@@ -31,18 +31,18 @@ function displayCoins(coins) {
     const ticker = document.getElementById("favCrypto");
     const tickerTwo = document.getElementById("favCryptoTwo");
 
-    for (i = 0; i < symbol.length; i++) {
+    for (i = 0; i < coinName.length; i++) {
         console.log((i+1) + ": " + symbol[i]);
-        let opt = symbol[i];
+        let opt = coinName[i];
         const el = document.createElement("option");
         el.textContent = opt;
         el.value = opt;
         ticker.appendChild(el);
     }
 
-    for (i = 0; i < symbol.length; i++) {
+    for (i = 0; i < coinName.length; i++) {
         // console.log((i+1) + ": " + symbol[i]);
-        let opt = symbol[i];
+        let opt = coinName[i];
         const el = document.createElement("option");
         el.textContent = opt;
         el.value = opt;

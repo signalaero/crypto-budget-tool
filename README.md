@@ -33,7 +33,7 @@ You must show us or document where that information is being stored so we can co
 
 Location: ` public/assets/js/main.js ` & ` public/tool.html ` , ` data/app.json `
 
-DEV API Location: `public/assets/js/api.js` , `server/index.js` & `public/assets/js/main.js `
+DEV API Location: `public/assets/js/api.js` , `server/index.js`
 
 5. Implement a regular expression (regex) to ensure a field either a phone number or an email address is always stored and displayed in the same format
 
