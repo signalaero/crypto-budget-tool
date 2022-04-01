@@ -11,7 +11,6 @@ class Calculate
                     coins.pop();
                 }
                  return displayCoins(coins);
- 
 
             })
     
