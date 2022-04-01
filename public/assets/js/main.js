@@ -4,6 +4,7 @@ const userListContainer = document.getElementById("user-list-container");
 const userList = document.getElementById("user-list");
 const userTemplate = document.getElementById("user-template");
 const logger = document.getElementById("log");
+const submit = document.getElementById("submitUserForm")
 
 // API helper class.
 const api = new Api({
@@ -160,3 +161,18 @@ budgetForm.addEventListener("submit", (event) => {
 
 // Populate the user list on page load.
 updateUserList();
+
+const calculate = new Calculate();
+const amount = calculate.getCoins();
+
+ for (i = 0; i < amount.length; i++) {
+    console.log((i+1) + ": " + amount[i]);
+  }
+
+submit.addEventListener("click", (event) => {
+
+  const index1 = event.target.elements["favCrypto"].index;
+  const index2 = event.target.elements["favCryptoTwo"].index;
+  const value = amount[index];
+  const value2 = amount[index];  
+});
