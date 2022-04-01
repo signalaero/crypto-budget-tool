@@ -163,7 +163,9 @@ budgetForm.addEventListener("submit", (event) => {
 updateUserList();
 
 const calculate = new Calculate();
+console.log(calculate)
 const amount = calculate.getCoins();
+console.log(amount);
 
  for (i = 0; i < amount.length; i++) {
     console.log((i+1) + ": " + amount[i]);

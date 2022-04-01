@@ -72,6 +72,7 @@ function displayCoins(coins) {
         tickerTwo.appendChild(el);
     }
 
+
     return amount;
     //for (i = 0; i < amount.length; i++) {
     //console.log((i+1) + ": " + amount[i]);
