@@ -57,3 +57,8 @@ As a programming student, I'm looking for suggestions on how to go about refacto
 - Form made with server-side help from Justin Prince's Dev API (https://github.com/justinkprince/dev-api).
 - Adapted form and expanded functionality from 1st Code Louisville JavaScript Project (https://github.com/signalaero/javascript-fantasy-tools)
 - Code Louisville Mentors for weekly help, advice, and tips!
+
+
+### Special Note
+
+4/1/22: Currently experiencing issue with trying to call ` calculate.getCoins() ` in main.js so that I can get an array of values from ` calculate.js ` and use it in ` main.js `
