@@ -10,7 +10,12 @@ class Calculate
                 for (let i = 0; i < coins.length * .2; i++) {
                     coins.pop();
                 }
-                 return displayCoins(coins);
+                let amountArray = Promise.resolve(displayCoins(coins));
+                amountArray.then(function(v) {
+                    console.log(v[0]);
+                });
+
+                 return amountArray;
 
             })
     

@@ -165,7 +165,6 @@ updateUserList();
 const calculate = new Calculate();
 console.log(calculate);
 
-
  for (i = 0; i < amount.length; i++) {
     console.log((i+1) + ": " + amount[i]);
   }

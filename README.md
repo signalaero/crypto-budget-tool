@@ -62,3 +62,4 @@ As a programming student, I'm looking for suggestions on how to go about refacto
 ### Special Note
 
 4/1/22: Currently experiencing issue with trying to call ` calculate.getCoins() ` in main.js so that I can get an array of values from ` calculate.js ` and use it in ` main.js `
+5/10/22: Addressing issue with ` calculate.js ` using async/await. Expect update soon.
