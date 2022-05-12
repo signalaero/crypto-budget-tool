@@ -162,6 +162,8 @@ budgetForm.addEventListener("submit", (event) => {
 // Populate the user list on page load.
 updateUserList();
 
+getCoins();
+
 const calculate = new Calculate();
 console.log(calculate);
 

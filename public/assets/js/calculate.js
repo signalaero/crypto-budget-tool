@@ -1,26 +1,5 @@
 class Calculate
 {
-    getCoins() {
-        const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'`
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                let coins = data.map(el => el);
-
-                for (let i = 0; i < coins.length * .2; i++) {
-                    coins.pop();
-                }
-                let amountArray = Promise.resolve(displayCoins(coins));
-                amountArray.then(function(v) {
-                    console.log(v[0]);
-                });
-
-                 return amountArray;
-
-            })
-    
-    }
-
     calculation()
     {
         // Calculations
@@ -39,6 +18,25 @@ class Calculate
         const netPayPerMonthDisplay = document.getElementById("netPayPerMonthDisplay");
         netPayPerMonthDisplay.textContent = "Net Pay Per Month = $" + (netPayPerMonth);
     }
+}
+
+async function getCoins() {
+    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'`
+    var test = []
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            coins = data.map(el => el);
+
+            for (let i = 0; i < coins.length * .2; i++) {
+                coins.pop();
+            }
+            
+            displayCoins(coins).then(val => {
+                amountResuls = val.map(m => m);
+                console.log(amountResuls);
+            })
+        })
 }
 
 function displayCoins(coins) {
@@ -75,8 +73,5 @@ function displayCoins(coins) {
     }
 
 
-    return amount;
-    //for (i = 0; i < amount.length; i++) {
-    //console.log((i+1) + ": " + amount[i]);
-    //}
+    return Promise.resolve(amount);
 }
